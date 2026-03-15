@@ -1,0 +1,147 @@
+/* ------------------- Global Styles ------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ------------------- Splash Screen ------------------- */
+.splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.splash-box {
+  background-color: #f9c74f;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  text-align: left;
+  max-width: 400px;
+  width: 100%;
+}
+
+.splash-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.splash-text h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.splash-text p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+.get-started-btn {
+  margin-top: 25px;
+  background-color: #333;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.get-started-btn:hover {
+  background-color: #555;
+}
+
+/* ------------------- Screen Switching ------------------- */
+.screen {
+  display: none;
+  width: 100%;
+  max-width: 500px;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* ------------------- Buttons ------------------- */
+.btn-gradient {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  border: none;
+  color: #333;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+}
+
+/* Fuel button style */
+.fuel-btn {
+  background-color: black;
+  color: #ffe600;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  width: 30%;
+}
+
+.fuel-btn:hover {
+  background-color: #333;
+  color: #fff200;
+}
+
+/* ------------------- Map ------------------- */
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ------------------- Forms ------------------- */
+form.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+form input, form select {
+  border-radius: 8px;
+}
+
+/* ------------------- Confirmation Screen ------------------- */
+#confirmScreen {
+  text-align: center;
+  padding: 20px;
+}
+
+#confirmScreen h2 {
+  font-weight: bold;
+  color: #28a745;
+}
+
+#confirmScreen p {
+  font-size: 16px;
+  color: #333;
+}

@@ -1,0 +1,16 @@
+/* styles.css */
+body { font-family: Arial, sans-serif; background:#f6f8fb; margin:0; padding:20px; }
+.container { max-width:900px; margin:0 auto; }
+.card { background:#fff; padding:18px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:16px; }
+input, select { width:100%; padding:10px; margin:8px 0; border:1px solid #ddd; border-radius:6px; box-sizing:border-box; }
+button { padding:10px 14px; border:none; background:#0078d4; color:#fff; border-radius:6px; cursor:pointer; }
+button.secondary { background:#666; margin-left:8px; }
+.options { display:flex; gap:12px; align-items:center; }
+.map { height:300px; border-radius:6px; overflow:hidden; margin:8px 0; }
+.phone-row { display:flex; gap:8px; }
+.phone-row select { width:30%; }
+.phone-row input { width:70%; }
+.msg { color:#b00020; margin-top:8px; }
+.station-item { padding:8px; border-bottom:1px solid #eee; cursor:pointer; }
+.muted { color:#666; font-size:14px; }
+h2,h3 { margin:0 0 12px 0; }

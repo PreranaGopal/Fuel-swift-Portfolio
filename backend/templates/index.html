@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fuel Delivery & Slot Booking</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="auth-screen" class="card">
+      <h2 id="auth-title">Signup</h2>
+      <div id="signup-form">
+        <input id="first_name" placeholder="First name" />
+        <input id="last_name" placeholder="Last name" />
+        <input id="email" placeholder="Email" />
+        <div class="phone-row">
+          <select id="country_code">
+            <option value="+91">+91</option>
+            <option value="+1">+1</option>
+            <option value="+44">+44</option>
+            <option value="+61">+61</option>
+          </select>
+          <input id="phone" placeholder="Phone number" />
+        </div>
+        <input id="password" type="password" placeholder="Password" />
+        <input id="confirm_password" type="password" placeholder="Confirm Password" />
+        <button id="signup-btn">Signup</button>
+        <p class="muted">Already have an account? <a href="#" id="to-login">Login</a></p>
+      </div>
+
+      <div id="login-form" style="display:none;">
+        <input id="login_email" placeholder="Email" />
+        <input id="login_password" type="password" placeholder="Password" />
+        <button id="login-btn">Login</button>
+        <p class="muted">New user? <a href="#" id="to-signup">Signup</a></p>
+      </div>
+      <div id="auth-msg" class="msg"></div>
+    </div>
+
+    <div id="dashboard" class="card" style="display:none;">
+      <h2>Welcome, <span id="user-name"></span></h2>
+      <div class="options">
+        <button id="slot-booking-btn">Slot Booking</button>
+        <button id="fuel-delivery-btn">Fuel Delivery</button>
+        <button id="logout-btn" class="secondary">Logout</button>
+      </div>
+    </div>
+
+    <!-- Slot Booking -->
+    <div id="slot-screen" class="card" style="display:none;">
+      <h3>Slot Booking</h3>
+      <label>Fuel Type</label>
+      <select id="slot-fuel-type">
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Gas">Gas</option>
+        <option value="EV">EV</option>
+      </select>
+      <label>Date & Time</label>
+      <input id="slot-datetime" type="datetime-local" />
+      <p>Select nearest station on the map</p>
+      <div id="slot-map" class="map"></div>
+      <div id="station-list"></div>
+      <button id="book-slot-btn">Book Slot</button>
+      <button class="secondary" id="slot-back">Back</button>
+      <div id="slot-msg" class="msg"></div>
+    </div>
+
+    <!-- Slot Confirmation -->
+    <div id="slot-confirm" class="card" style="display:none;">
+      <h3>Slot Booked Successfully</h3>
+      <div id="slot-summary"></div>
+      <button id="slot-done">Done</button>
+    </div>
+
+    <!-- Fuel Delivery -->
+    <div id="delivery-screen" class="card" style="display:none;">
+      <h3>Fuel Delivery</h3>
+      <label>Fuel</label>
+      <select id="delivery-fuel">
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Gas">Gas</option>
+      </select>
+      <div id="subtypes-area"></div>
+      <button id="delivery-next">Next</button>
+      <button class="secondary" id="delivery-back">Back</button>
+      <div id="delivery-msg" class="msg"></div>
+    </div>
+
+    <!-- Location selection -->
+    <div id="location-screen" class="card" style="display:none;">
+      <h3>Delivery Location</h3>
+      <button id="use-current">Use Current Location</button>
+      <p>Or enter location manually</p>
+      <input id="manual-location" placeholder="Enter address or landmark" />
+      <button id="location-continue">Continue</button>
+      <div id="location-map" class="map" style="display:none;"></div>
+      <button class="secondary" id="location-back">Back</button>
+      <div id="location-msg" class="msg"></div>
+    </div>
+
+    <!-- Payment -->
+    <div id="payment-screen" class="card" style="display:none;">
+      <h3>Payment</h3>
+      <label>Select payment method</label>
+      <select id="payment-method">
+        <option value="UPI">UPI</option>
+        <option value="Card">Card</option>
+        <option value="Cash">Cash</option>
+      </select>
+      <div id="payment-details-area"></div>
+      <button id="pay-btn">Pay / Confirm</button>
+      <button class="secondary" id="payment-back">Back</button>
+      <div id="payment-msg" class="msg"></div>
+    </div>
+
+    <!-- Dummy payment -->
+    <div id="dummy-payment" class="card" style="display:none;">
+      <h3>Processing Payment</h3>
+      <p id="dummy-text">Please wait...</p>
+      <button id="dummy-done">Continue</button>
+    </div>
+
+    <!-- Delivery Confirmation -->
+    <div id="delivery-confirm" class="card" style="display:none;">
+      <h3>Order Confirmed</h3>
+      <div id="delivery-summary"></div>
+      <button id="delivery-done">Done</button>
+    </div>
+
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
